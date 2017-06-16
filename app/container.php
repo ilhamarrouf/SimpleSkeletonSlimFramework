@@ -5,11 +5,11 @@ $container = $app->getContainer();
 ################################### Service ###################################
 // View engine
 $container['view'] = function ($container) {
-    $settings = $container->get('settings');
+    $settings = $container->get('settings')['view'];
 
     $view = new \Slim\Views\Twig(
-        $settings['view']['template_path'],
-        $settings['view']['twig']
+        $settings['template_path'],
+        $settings['twig']
     );
     $view->addExtension(new \Slim\Views\TwigExtension(
         $container->get('router'),

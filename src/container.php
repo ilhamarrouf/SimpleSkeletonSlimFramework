@@ -7,11 +7,11 @@ $container = $app->getContainer();
 $container['view'] = function ($container) {
     $settings = $container->get('settings')['view'];
 
-    $view = new \Slim\Views\Twig(
+    $view = new Slim\Views\Twig(
         $settings['template_path'],
         $settings['twig']
     );
-    $view->addExtension(new \Slim\Views\TwigExtension(
+    $view->addExtension(new Slim\Views\TwigExtension(
         $container->get('router'),
         $container->get('request')->getUri())
     );
@@ -21,5 +21,5 @@ $container['view'] = function ($container) {
 
 ################################# Controllers #################################
 $container['HomeController'] = function ($container) {
-    return new \App\Controllers\HomeController($container);
+    return new App\Controllers\HomeController($container);
 };

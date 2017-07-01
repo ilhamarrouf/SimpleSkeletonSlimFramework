@@ -3,10 +3,8 @@
 return [
     'settings' => [
 
-        // Showing errors
-        'displayErrorDetails' => true,
-
-        // Add a Content-Length header to the response
+        // Slim Configuration
+        'displayErrorDetails'    => true,
         'addContentLengthHeader' => false,
 
         // View engine

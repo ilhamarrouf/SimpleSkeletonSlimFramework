@@ -2,7 +2,12 @@
 
 $container = $app->getContainer();
 
-################################### Service ###################################
+/*
+|--------------------------------------------------------------------------
+| Registered Container Service
+|--------------------------------------------------------------------------
+*/
+
 // View engine
 $container['view'] = function ($container) {
     $settings = $container->get('settings')['view'];
@@ -19,7 +24,12 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-################################# Controllers #################################
+/*
+|--------------------------------------------------------------------------
+| Registered Controller
+|--------------------------------------------------------------------------
+*/
+
 $container['HomeController'] = function ($container) {
     return new App\Controllers\HomeController($container);
 };

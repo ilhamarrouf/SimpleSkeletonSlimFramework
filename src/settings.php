@@ -5,7 +5,6 @@ return [
 
         // Slim Configuration
         'displayErrorDetails'    => true,
-        'addContentLengthHeader' => false,
 
         // View engine
         'view' => [

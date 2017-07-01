@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . './../vendor/autoload.php';
 
 try {
     (new Dotenv\Dotenv(__DIR__.'/../'))->load();
@@ -8,7 +8,7 @@ try {
     //
 }
 
-$settings = require __DIR__ . '/../src/settings.php';
+$settings = require __DIR__ . './../src/settings.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ $app = new Slim\App($settings);
 |--------------------------------------------------------------------------
 */
 
-require __DIR__ . '/../src/container.php';
+require __DIR__ . './../src/container.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +32,4 @@ require __DIR__ . '/../src/container.php';
 |--------------------------------------------------------------------------
 */
 
-require __DIR__ . '/../src/routes.php';
+require __DIR__ . './../src/routes.php';

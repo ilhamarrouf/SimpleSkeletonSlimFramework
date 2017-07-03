@@ -4,7 +4,7 @@ return [
     'settings' => [
 
         // Slim Configuration
-        'displayErrorDetails'    => true,
+        'displayErrorDetails' => true,
 
         // View engine
         'view' => [

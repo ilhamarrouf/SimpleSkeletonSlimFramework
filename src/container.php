@@ -8,7 +8,7 @@ $container = $app->getContainer();
 |--------------------------------------------------------------------------
 */
 
-// View engine
+// Twig
 $container['view'] = function ($container) {
     $settings = $container->get('settings')['view'];
 
@@ -22,6 +22,17 @@ $container['view'] = function ($container) {
     );
 
     return $view;
+};
+
+// Monolog
+$container['logger'] = function ($container) {
+    $settings = $container->get('settings')['logger'];
+
+    $logger = new Monolog\Logger($settings['name']);
+    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
+    $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], Monolog\Logger::DEBUG));
+
+    return $logger;
 };
 
 /*

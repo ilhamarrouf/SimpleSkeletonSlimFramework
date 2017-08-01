@@ -6,12 +6,19 @@ return [
         // Slim Configuration
         'displayErrorDetails' => true,
 
-        // View engine
+        // Twig
         'view' => [
             'template_path' => __DIR__ . '/../views',
             'twig' => [
-                'cache' => false
+                'cache' => __DIR__ . '/../cache/twig',
+                'auto_reload' => true,
             ],
+        ],
+
+        // Monolog
+        'logger' => [
+            'name' => 'app',
+            'path' => __DIR__ . '/../logs/'.date('Y-m-d').'.log',
         ],
     ]
 ];

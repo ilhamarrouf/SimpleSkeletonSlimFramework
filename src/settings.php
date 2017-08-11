@@ -10,7 +10,7 @@ return [
         'view' => [
             'template_path' => __DIR__ . '/../views',
             'twig' => [
-                'cache' => __DIR__ . '/../cache/twig',
+                'cache' => __DIR__ . '/../storage/cache/twig',
                 'auto_reload' => true,
             ],
         ],
@@ -18,7 +18,7 @@ return [
         // Monolog
         'logger' => [
             'name' => 'app',
-            'path' => __DIR__ . '/../logs/'.date('Y-m-d').'.log',
+            'path' => __DIR__ . '/../storage/logs/'.date('Y-m-d').'.log',
         ],
     ]
 ];

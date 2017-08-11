@@ -14,7 +14,7 @@ db:
     environment:
         MYSQL_ROOT_PASSWORD: root
     volumes:
-        - ./mysql_directory:/var/lib/mysql
+        - ./storage/mysql_directory:/var/lib/mysql
 redis:
     image: redis
     ports:

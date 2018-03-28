@@ -8,7 +8,7 @@ try {
     //
 }
 
-$settings = require __DIR__ . './../src/settings.php';
+$settings = require __DIR__ . './../config/settings.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ $app = new Slim\App($settings);
 
 $container = $app->getContainer();
 
-require __DIR__ . './../src/container.php';
+require __DIR__ . './../config/container.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +35,9 @@ require __DIR__ . './../src/container.php';
 */
 
 $app->group('', function () use ($app) {
-    require __DIR__ . './../src/routesWeb.php';
+    require __DIR__ . './../routes/web.php';
 });
 
 $app->group('/api', function () use ($app) {
-    require __DIR__ . './../src/routesAPI.php';
-})->add(new \App\Middlewares\ApiRoute($container));
+    require __DIR__ . './../routes/api.php';
+})->add(new \App\Middlewares\ApiRouteMiddleware($container));

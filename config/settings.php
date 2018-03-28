@@ -10,7 +10,7 @@ return [
         'view' => [
             'template_path' => __DIR__ . '/../views',
             'twig' => [
-                'cache' => __DIR__ . '/../storage/cache/twig',
+                'cache' => __DIR__ . '/../storage/cache/views',
                 'auto_reload' => true,
             ],
         ],

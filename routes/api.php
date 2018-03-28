@@ -6,6 +6,6 @@
 |--------------------------------------------------------------------------
 */
 
-$app->get('/', function($request, $response, $args) {
-    return 'API Routing';
+$app->get('', function($request, $response, $args) {
+    return $response->withJson(['message' => 'Hello World']);
 });

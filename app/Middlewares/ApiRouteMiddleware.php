@@ -4,7 +4,7 @@ namespace App\Middlewares;
 
 use Slim\Exception\NotFoundException;
 
-class ApiRoute extends Middleware
+class ApiRouteMiddleware extends Middleware
 {
     public function __invoke($request, $response, $next)
     {

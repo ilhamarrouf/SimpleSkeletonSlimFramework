@@ -1,3 +1,8 @@
+# Folder
 vendor/
+.idea/
+.DS_Store/
+
+# File
 .env
-storage/mysql_directory/*
+phinx.yml

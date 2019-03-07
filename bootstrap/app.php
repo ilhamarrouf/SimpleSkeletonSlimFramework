@@ -40,4 +40,13 @@ $app->group('', function () use ($app) {
 
 $app->group('/api', function () use ($app) {
     require __DIR__ . './../routes/api.php';
-})->add(new \App\Middlewares\ApiRouteMiddleware($container));
+});
+
+/*
+|--------------------------------------------------------------------------
+| Load The Application Middleware
+|--------------------------------------------------------------------------
+*/
+
+$app->add(new \App\Middlewares\CORSMiddleware($container));
+

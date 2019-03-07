@@ -6,19 +6,17 @@ return [
         // Slim Configuration
         'displayErrorDetails' => true,
 
-        // Twig
         'view' => [
-            'template_path' => __DIR__ . '/../views',
+            'template_path' => __DIR__ . '/../resources/views',
             'twig' => [
-                'cache' => __DIR__ . '/../storage/cache/views',
+                'cache' => STORAGE_PATH.'cache/views',
                 'auto_reload' => true,
             ],
         ],
 
-        // Monolog
         'logger' => [
             'name' => 'app',
-            'path' => __DIR__ . '/../storage/logs/'.date('Y-m-d').'.log',
+            'path' => STORAGE_PATH. 'logs/'.date('Y-m-d').'.log',
         ],
     ]
 ];

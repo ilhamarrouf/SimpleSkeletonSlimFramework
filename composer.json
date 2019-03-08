@@ -27,7 +27,7 @@
     "scripts": {
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "php -r \"file_exists('.phinx.yml.example') || copy('.phinx.yml.example', '.phinx.yml');\""
+            "php -r \"file_exists('phinx.yml.example') || copy('phinx.yml.example', 'phinx.yml');\""
         ]
     },
     "minimum-stability": "stable",

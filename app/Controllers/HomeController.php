@@ -2,8 +2,10 @@
 
 namespace App\Controllers;
 
+use Respect\Validation\Validator as v;
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Slim\Http\StatusCode;
 
 class HomeController extends Controller
 {
@@ -17,6 +19,17 @@ class HomeController extends Controller
     public function index(Request $request, Response $response, array $args) : Response
     {
         $this->logger->info(__METHOD__, $request->getParams());
+
+        $validator =  $this->validator->validate($request, [
+            'name' => v::optional(v::stringType()->alpha()),
+        ]);
+
+        if (!$validator->isValid()) {
+            return $response->withJson([
+                'message' => 'The given data was invalid.',
+                'errors' => $validator->getErrors(),
+            ], StatusCode::HTTP_UNPROCESSABLE_ENTITY);
+        }
 
         return $this->view->render($response, 'index.twig', [
             'name' => $request->getParam('name', 'World')

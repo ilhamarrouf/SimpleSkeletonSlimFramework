@@ -24,7 +24,7 @@ class Validator
      *
      * @return $this
      */
-    public function validate(Request $request, array $rules)
+    public function validate(Request $request, array $rules) : self
     {
         foreach ($rules as $field => $rule) {
             try {
@@ -49,7 +49,7 @@ class Validator
     /**
      * @return array
      */
-    public function getErrors()
+    public function getErrors() : array
     {
         return $this->errors;
     }
@@ -60,7 +60,7 @@ class Validator
      *
      * @return $this
      */
-    public function setErrors($field, array $errors)
+    public function setErrors($field, array $errors) : self
     {
         $this->errors[$field] = $errors;
 

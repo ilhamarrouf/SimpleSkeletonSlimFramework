@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    container_name: web
+    build:
+      context: ./
+      dockerfile: docker/dockerfile/web.dockerfile
+    restart: always
+    volumes:
+      - ./:/var/www
+    ports:
+      - "8080:80"
+    links:
+      - app
+  app:
+    container_name: app
+    build:
+      context: ./
+      dockerfile: docker/dockerfile/app.dockerfile
+    restart: always
+    volumes:
+      - ./:/var/www

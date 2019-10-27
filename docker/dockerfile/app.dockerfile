@@ -11,5 +11,6 @@ ADD ./docker/php/php.ini /usr/local/etc/php/php.ini
 ADD . /var/www
 
 RUN chown -R www-data:www-data /var/www
+RUN chmod -R 775 /var/www/data
 
 WORKDIR /var/www

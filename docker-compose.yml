@@ -7,8 +7,6 @@ services:
       context: ./
       dockerfile: docker/dockerfile/web.dockerfile
     restart: always
-    volumes:
-      - ./:/var/www
     ports:
       - "8080:80"
     links:
@@ -19,5 +17,3 @@ services:
       context: ./
       dockerfile: docker/dockerfile/app.dockerfile
     restart: always
-    volumes:
-      - ./:/var/www

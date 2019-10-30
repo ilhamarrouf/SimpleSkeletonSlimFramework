@@ -41,9 +41,12 @@ $container['serializer'] = function () {
     $serializer = new \League\Fractal\Manager;
     $serializer->setSerializer(new \App\Serializers\CustomSerializer);
     $serializer->parseIncludes(request('include', []));
+    $serializer->parseExcludes(request('excludes', []));
 
     return $serializer;
 };
+
+
 
 /**
  * @return \App\Validations\Validator
@@ -69,6 +72,24 @@ $container['logger'] = function () {
     }
 
     return $logger;
+};
+
+/**
+ * @param $container
+ *
+ * @return \Ilhamarrouf\Filesystem\FilesystemManager
+ */
+$container['storage'] = function ($container) {
+    return new \Ilhamarrouf\Filesystem\FilesystemManager($container);
+};
+
+/**
+ * @param $container
+ *
+ * @return \Anddye\Mailer\Mailer
+ */
+$container['mailer'] = function ($container) {
+    return new \Anddye\Mailer\Mailer($container['view'], config('mailer'));
 };
 
 /*

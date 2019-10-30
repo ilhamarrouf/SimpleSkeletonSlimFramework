@@ -73,5 +73,9 @@ return [
             'name' => 'app',
             'path' => STORAGE_PATH. 'logs/'.date('Y-m-d').'.log',
         ],
+
+        'php_ini' => [
+            'date.timezone' => env('APP_TIMEZONE', 'UTC'),
+        ],
     ]
 ];

@@ -15,3 +15,11 @@ ADD ./docker/varnish/default.vcl /etc/varnish/default.vcl
 ADD ./docker/supervisor/supervisor.conf /etc/supervisord.conf
 
 WORKDIR /var/www
+
+EXPOSE 80
+
+# Here we go
+ADD docker/start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]

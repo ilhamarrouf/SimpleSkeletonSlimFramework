@@ -41,7 +41,7 @@ return [
             'port' => env('MAIL_PORT'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
-            'encryption' => env('MAIL_ENCRYPTION'),
+            'protocol' => env('MAIL_ENCRYPTION'),
             'from' => [
                 'address' => env('MAIL_DEFAULT_SENDER_ADDRESS'),
                 'name' => env('MAIL_DEFAULT_SENDER_NAME'),

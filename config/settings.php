@@ -43,8 +43,8 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'protocol' => env('MAIL_ENCRYPTION'),
             'from' => [
-                'address' => env('MAIL_DEFAULT_SENDER_ADDRESS'),
-                'name' => env('MAIL_DEFAULT_SENDER_NAME'),
+                'address' => env('MAIL_FROM_ADDRESS'),
+                'name' => env('MAIL_FROM_NAME'),
             ],
         ],
 

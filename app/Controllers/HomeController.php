@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function index(Request $request, Response $response, array $args) : Response
     {
-        $this->logger->info(__METHOD__, $request->getParams());
+        logger()->info(__METHOD__, $request->getParams());
 
         $validator =  $this->validator->validate($request, [
             'name' => v::optional(v::stringType()->alpha()),
@@ -31,7 +31,7 @@ class HomeController extends Controller
             ], StatusCode::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        return $this->view->render($response, 'index.twig', [
+        return view('index.twig', [
             'name' => $request->getParam('name', 'World')
         ]);
     }

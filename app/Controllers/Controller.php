@@ -29,4 +29,14 @@ abstract class Controller
             return $this->container->{$property};
         }
     }
+
+    public function __set($name, $value)
+    {
+        // TODO: Implement __set() method.
+    }
+
+    public function __isset($name)
+    {
+        // TODO: Implement __isset() method.
+    }
 }

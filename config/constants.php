@@ -6,5 +6,4 @@
  * Time: 02.47
  */
 
-define('PUBLIC_PATH', __DIR__ . '/../public/');
-define('STORAGE_PATH', __DIR__ . '/../storage/');
+define('BASE_PATH', $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__));

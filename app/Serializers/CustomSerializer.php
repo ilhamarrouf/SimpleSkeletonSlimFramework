@@ -18,7 +18,7 @@ class CustomSerializer extends DataArraySerializer
      *
      * @return array
      */
-    public function mergeIncludes($transformedData, $includedData)
+    public function mergeIncludes($transformedData, $includedData):? array
     {
         $includedData = array_map(function ($include) {
             return $include['data'];

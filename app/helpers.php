@@ -40,8 +40,12 @@ if (! function_exists('request')) {
      *
      * @return mixed
      */
-    function request(string $key, $default = null)
+    function request(string $key = null, $default = null)
     {
+        if ($key === null) {
+            return container()->get('request');
+        }
+
         return container()->get('request')->getParam($key, $default);
     }
 }
@@ -84,6 +88,18 @@ if (! function_exists('today')) {
     }
 }
 
+if (! function_exists('yesterday')) {
+    /**
+     * @param null $tz
+     *
+     * @return \Carbon\CarbonInterface
+     */
+    function yesterday($tz = null)
+    {
+        return Carbon::yesterday($tz);
+    }
+}
+
 if (! function_exists('tomorrow')) {
 
     /**
@@ -107,5 +123,66 @@ if (! function_exists('config')) {
     function config($key, $default = null)
     {
         return Arr::get(container()->get('settings'), $key, $default);
+    }
+}
+
+if (! function_exists('logger')) {
+    /**
+     * @return mixed
+     */
+    function logger()
+    {
+        return container()->get('logger');
+    }
+}
+
+if (! function_exists('view')) {
+    /**
+     * @param $template
+     * @param array $data
+     *
+     * @return mixed
+     */
+    function view($template, $data = [])
+    {
+        return container()->get('view')->render(
+            container()->get('response'), $template, $data
+        );
+    }
+}
+
+if (! function_exists('base_path')) {
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function base_path($path = '')
+    {
+        return BASE_PATH.($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+}
+
+if (! function_exists('storage_path')) {
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function storage_path($path = '')
+    {
+        return base_path('storage' . ($path ? DIRECTORY_SEPARATOR.$path : $path));
+    }
+}
+
+if (! function_exists('public_path')) {
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function public_path($path = '')
+    {
+        return base_path('public' . ($path ? DIRECTORY_SEPARATOR.$path : $path));
     }
 }

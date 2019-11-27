@@ -16,7 +16,8 @@
         "respect/validation": "^1.1",
         "robmorgan/phinx": "^0.10.6",
         "andrewdyer/slim3-mailer": "^1.1",
-        "ilhamarrouf/slim-filesystem": "^0.1.0"
+        "ilhamarrouf/slim-filesystem": "^0.1.0",
+        "illuminate/database": "~5.8"
     },
     "autoload": {
         "psr-4": {

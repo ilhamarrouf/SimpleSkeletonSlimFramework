@@ -46,8 +46,6 @@ $container['serializer'] = function () {
     return $serializer;
 };
 
-
-
 /**
  * @return \App\Validations\Validator
  */

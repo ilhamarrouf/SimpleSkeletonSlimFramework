@@ -60,3 +60,11 @@ $app->group('/api', function () use ($app) {
 
 $app->add(new \App\Middlewares\CORSMiddleware($container));
 
+/*
+|--------------------------------------------------------------------------
+| Load The Application Dependency
+|--------------------------------------------------------------------------
+*/
+
+\Respect\Validation\Validator::with('\App\Validations\Rules');
+

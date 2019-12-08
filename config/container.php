@@ -47,6 +47,13 @@ $container['serializer'] = function () {
 };
 
 /**
+ * @return \GuzzleHttp\Client
+ */
+$container['guzzle'] = function () {
+    return new \GuzzleHttp\Client(config('guzzle'));
+};
+
+/**
  * @return \App\Validations\Validator
  */
 $container['validator'] = function () {

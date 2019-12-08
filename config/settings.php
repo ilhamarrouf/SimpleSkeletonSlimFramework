@@ -69,6 +69,10 @@ return [
             ],
         ],
 
+        'guzzle' => [
+            'timeout' => 3
+        ],
+
         'logger' => [
             'name' => env('APP_ENV', 'debug'),
             'path' => storage_path('logs/'.date('Y-m-d').'.log'),

@@ -2,11 +2,7 @@
 
 return [
     'settings' => [
-
-        // Slim Configuration
         'displayErrorDetails' => true,
-
-        // Storage
         'filesystem' => [
             'default' => env('FILESYSTEM_DRIVER', 'local'),
             'cloud' => env('FILESYSTEM_CLOUD', 's3'),
@@ -34,8 +30,6 @@ return [
                 ],
             ],
         ],
-
-        // Mailer
         'mailer' => [
             'host' => env('MAIL_HOST'),
             'port' => env('MAIL_PORT'),
@@ -47,8 +41,6 @@ return [
                 'name' => env('MAIL_FROM_NAME'),
             ],
         ],
-
-        // Database
         'db' => [
             'driver' => env('DB_CONNECTION', 'pgsql'),
             'host' => env('DB_HOST', 'localhost'),
@@ -60,7 +52,12 @@ return [
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
         ],
-
+        'redis' => [
+            'scheme' => env('REDIS_SCHEME', 'tcp'),
+            'host' => env('REDIS_HOST'),
+            'port' => env('REDIS_PORT'),
+            'password' => env('REDIS_PASSWORD'),
+        ],
         'view' => [
             'template_path' => __DIR__ . '/../resources/views',
             'twig' => [
@@ -68,16 +65,13 @@ return [
                 'auto_reload' => true,
             ],
         ],
-
         'guzzle' => [
             'timeout' => 3
         ],
-
         'logger' => [
             'name' => env('APP_ENV', 'debug'),
             'path' => storage_path('logs/'.date('Y-m-d').'.log'),
         ],
-
         'php_ini' => [
             'date.timezone' => env('APP_TIMEZONE', 'UTC'),
         ],

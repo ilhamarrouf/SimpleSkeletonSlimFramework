@@ -39,7 +39,7 @@ class Log
                 );
             }
         } catch (\Exception $e) {
-            logger()->error('TelegramLog bad token/chat_id.');
+            logger()->error('telegram logger bad token/chat_id.');
         }
     }
 }

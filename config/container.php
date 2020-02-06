@@ -54,6 +54,13 @@ $container['guzzle'] = function () {
 };
 
 /**
+ * @return \Predis\Client
+ */
+$container['redis'] = function () {
+    return new \Predis\Client(config('redis'));
+};
+
+/**
  * @return \App\Validations\Validator
  */
 $container['validator'] = function () {

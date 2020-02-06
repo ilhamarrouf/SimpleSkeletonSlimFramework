@@ -18,7 +18,8 @@
         "andrewdyer/slim3-mailer": "^1.1",
         "ilhamarrouf/slim-filesystem": "^0.1.0",
         "illuminate/database": "~5.8",
-        "guzzlehttp/guzzle": "^6.0"
+        "guzzlehttp/guzzle": "^6.0",
+        "predis/predis": "^1.1"
     },
     "autoload": {
         "psr-4": {
